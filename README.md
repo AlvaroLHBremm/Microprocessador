@@ -16,14 +16,14 @@ Descrição:
 * Unidade de controle decodifica instruções e controla o fluxo de dados.
 * Unidade logica aritmética realiza calculos e sinaliza estados de flags.
 
-
-Instruções (Hexadecimal)
-* LDA_[10][XX]: Carrega endereço X de memória ao acumulador.
-* STA_[20][XX]: salva acumulador para endereço X de memória.
-* ADD_[30][XX]: Soma acumulador com endereço X de memória.
-* NOT_[40]____: Inverte acumulador.
-* AND_[50][XX]: Realiza operação AND bitwise com endereço X de memória.
-* OR__[60][XX]: Realizar operação OR bitwise com endereço X de memória.
-* JMP_[70][XX]: Pulo sem condição para X endereço de memória.
-* JZ__[71][XX]: Pulo para endereço X de memória quando acumulador igual a 0.
-* JN__[72][XX]: Pulo para endereço X de memória quando acumulador é negativo.
+| Instruções | Descrição |
+| :---: | :--- |
+| `LDA_[20][XX]` | Carrega endereço X de memória ao acumulador. |
+| STA_[20][XX] | salva acumulador para endereço X de memória. |
+| ADD_[30][XX] | Soma acumulador com endereço X de memória. |
+| NOT_[40]____ | Inverte acumulador. |
+| AND_[50][XX] | Realiza operação AND bitwise com endereço X de memória. |
+| OR__[60][XX] | Realizar operação OR bitwise com endereço X de memória. |
+| JMP_[70][XX] | Pulo sem condição para X endereço de memória. |
+| JZ__[71][XX] | Pulo para endereço X de memória quando acumulador igual a 0. |
+| JN__[72][XX] | Pulo para endereço X de memória quando acumulador é negativo. | 
