@@ -18,7 +18,7 @@ Descrição:
 
 ### Tabela de instruções
 | Instruções | Syntax | Descrição |
-| :---: | :--- |
+| :--- | :--: | :--- |
 | `LDA` | [20][XX] | Carrega endereço X de memória ao acumulador. |
 | `STA` | [20][XX] | salva acumulador para endereço X de memória. |
 | `ADD` | [30][XX] | Soma acumulador com endereço X de memória. |
