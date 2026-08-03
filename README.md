@@ -12,19 +12,20 @@ Seções:
 
 Descrição:
 * É possivel programar codigos em assembly/código de maquina para ser executado pelo processador.
-* O processador lê e executa instruções, carregando-as da memoria ROM para RAM. 
+* O processador carrega da memoria ROM para RAM o código quando pressionado o botão de ligar.
+* Ao apertar o botão de executar a unidade de controle lê e executa as instruções presentes na RAM.
 * Unidade de controle decodifica instruções e controla o fluxo de dados.
 * Unidade logica aritmética realiza calculos e sinaliza estados de flags.
 
 ### Tabela de instruções
 | Instruções | Syntax | Descrição |
 | :--- | :--: | :--- |
-| `LDA` | [20][XX] | Carrega endereço X de memória ao acumulador. |
-| `STA` | [20][XX] | salva acumulador para endereço X de memória. |
-| `ADD` | [30][XX] | Soma acumulador com endereço X de memória. |
-| `NOT` | [40]____ | Inverte acumulador. |
-| `AND` | [50][XX] | Realiza operação AND bitwise com endereço X de memória. |
-| `OR`  | [60][XX] | Realizar operação OR bitwise com endereço X de memória. |
-| `JMP` | [70][XX] | Pulo sem condição para X endereço de memória. |
-| `JZ`  | [71][XX] | Pulo para endereço X de memória quando acumulador igual a 0. |
-| `JN`  | [72][XX] | Pulo para endereço X de memória quando acumulador é negativo. | 
+| `LDA` | [0x10][0xXX] | Carrega endereço X de memória ao acumulador. |
+| `STA` | [0x20][0xXX] | salva acumulador para endereço X de memória. |
+| `ADD` | [0x30][0xXX] | Soma acumulador com endereço X de memória. |
+| `NOT` | [0x40]____ | Inverte acumulador. |
+| `AND` | [0x50][0xXX] | Realiza operação AND bitwise com endereço X de memória. |
+| `OR`  | [0x60][0xXX] | Realizar operação OR bitwise com endereço X de memória. |
+| `JMP` | [0x70][0xXX] | Pulo sem condição para X endereço de memória. |
+| `JZ`  | [0x71][0xXX] | Pulo para endereço X de memória quando acumulador igual a 0. |
+| `JN`  | [0x72][0xXX] | Pulo para endereço X de memória quando acumulador é negativo. | 
