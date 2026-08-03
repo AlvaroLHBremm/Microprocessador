@@ -6,9 +6,9 @@ Video descritivo e simulação: https://www.youtube.com/watch?v=KcWQU9CIYoI&t=13
 ![image alt](https://github.com/AlvaroLHBremm/Processador-programavel-de-8-bits/blob/main/Estrutura%20do%20Processador.png?raw=true)
 
 Seções:
-* Vermelho:  Unidade de controle
-* Azul:      Unidade lógica arimética e flags
-* Verde:     Controle de fluxo de memória
+* Vermelho:  Unidade de controle: Decodificador de instruções e maquina de estado
+* Azul:      Unidade lógica arimética e flags de jump
+* Verde:     Controle de fluxo de memória: ROM, RAM, Program counter.
 
 Descrição:
 * É possivel programar codigos em assembly/código de maquina para ser executado pelo processador.
