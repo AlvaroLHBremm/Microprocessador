@@ -11,6 +11,11 @@ https://www.youtube.com/watch?v=KcWQU9CIYoI&t=136s
 
 ## Arquitetura
 
+O seu processador possui, na prática, dois modos bem distintos de operação:
+
+**Inicialização/carregamento:** um circuito dedicado copia sequencialmente o conteúdo da ROM para a RAM.
+**Execução: depois do carregamento**, o controle dos barramentos é transferido para o datapath do processador e o PC passa a endereçar a RAM.
+
 A arquitetura foi dividida em três blocos principais, destacados por cores no diagrama:
 
 - 🔴 **Unidade de Controle:** responsável pela decodificação das instruções e pelo controle dos diferentes estados necessários à execução de cada operação;
