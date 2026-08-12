@@ -2,7 +2,7 @@
 
 Projeto pessoal desenvolvido no simulador **Deeds** com o objetivo de estudar, projetar e implementar a arquitetura de um processador programável de 8 bits.
 
-A arquitetura foi desenvolvida a partir de componentes digitais básicos e inclui **unidade de controle, unidade lógica e aritmética (ULA), registradores, memória ROM, memória RAM e contador de programa**, permitindo a execução de um conjunto próprio de instruções.
+A arquitetura foi desenvolvida a partir de componentes digitais básicos e inclui **unidade de controle, unidade lógica e aritmética (ULA), registrador acumulador, memória ROM, memória RAM e contador de programa**, permitindo a execução de um conjunto próprio de instruções.
 
 🎥 **Vídeo demonstrativo e simulação:**  
 https://www.youtube.com/watch?v=KcWQU9CIYoI&t=136s
