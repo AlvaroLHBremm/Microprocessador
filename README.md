@@ -1,8 +1,8 @@
 # Processador Programável de 8 bits
 
-Projeto pessoal desenvolvido no simulador **Deeds** com o objetivo de estudar, projetar e implementar a arquitetura de um processador programável de 8 bits.
+Projeto pessoal desenvolvido no simulador de eletrônica digital **Deeds** com o objetivo de estudar, projetar e implementar a arquitetura de um processador programável de 8 bits.
 
-A arquitetura foi desenvolvida a partir de componentes digitais básicos e inclui **unidade de controle, unidade lógica e aritmética (ULA), registrador acumulador, memória ROM, memória RAM e contador de programa**, permitindo a execução de um conjunto próprio de instruções.
+A arquitetura foi desenvolvida a partir de componentes digitais básicos e inclui **unidade de controle, unidade lógica e aritmética (ULA), registrador acumulador, memória ROM/RAM e contador de programa**, permitindo a execução de um conjunto próprio de instruções.
 
 🎥 **Vídeo demonstrativo e simulação:**  
 https://www.youtube.com/watch?v=KcWQU9CIYoI&t=136s
@@ -13,8 +13,8 @@ https://www.youtube.com/watch?v=KcWQU9CIYoI&t=136s
 
 Há dois modos bem distintos de operação:
 
-**Inicialização/carregamento:** um circuito dedicado copia sequencialmente o conteúdo da ROM para a RAM.
-**Execução: depois do carregamento**, o controle dos barramentos é transferido para o datapath do processador e o PC passa a endereçar a RAM.
+**Inicialização/carregamento:** um circuito dedicado copia sequencialmente o conteúdo da ROM para a RAM. Ligando uma flag para sinalizar seu término.
+**Execução: depois do carregamento**, Quando a flag de carregamento estiver ativa, o controle dos barramentos é transferido para o datapath do processador e o PC passa a endereçar a RAM.
 
 
 <table>
@@ -27,21 +27,20 @@ Há dois modos bem distintos de operação:
 
     O processador possui um circuito dedicado de inicialização responsável por transferir o programa armazenado na memória ROM para a memória RAM antes do início da execução.
     
-    Ao acionar o botão Ligar, um contador de carregamento independente do contador de programa percorre sequencialmente os endereços da ROM. A cada ciclo, o conteúdo lido é transferido para o endereço correspondente da RAM.
+    Ao acionar o botão Ligar, um contador de carregamento independente do contador de programa percorre sequencialmente os endereços da ROM e da RAM. A cada ciclo, o conteúdo lido é transferido para o endereço correspondente da RAM.
     
     Durante essa etapa, multiplexadores selecionam:
+    -    O contador de carregamento como fonte do barramento de endereços;
+    -    A ROM como fonte do barramento de dados utilizado para escrita na RAM.
     
-    o contador de carregamento como fonte do barramento de endereços;
-    a ROM como fonte do barramento de dados utilizado para escrita na RAM.
+    Ao atingir o final da região de memória a ser copiada, o contador de carregamento gera uma flag indicando a conclusão da inicialização. Essa flag intertrava os circuitos responsáveis pelo carregamento e altera o origem do barramento de endereço e dados da RAM através de multiplexadores, transferindo o controle do sistema para o próprio processador:
     
-    Ao atingir o final da região de memória a ser copiada, o contador de carregamento gera uma flag indicando a conclusão da inicialização. Essa flag intertrava os circuitos responsáveis pelo carregamento e altera o estado dos multiplexadores, transferindo o controle do sistema para o processador:
-    
-    o barramento de endereços passa a ser controlado pelo Program Counter (PC);
+    ???o barramento de endereços passa a ser controlado pelo Contador de programa (PC);
     o caminho de dados deixa de ser alimentado pela ROM e passa a utilizar o datapath da ULA.
     
     A partir desse momento, o processador encontra-se pronto para entrar no estado de execução.
     
-    Execução do programa
+    **Execução do programa**
     
     O segundo botão permite iniciar a execução do programa previamente carregado na RAM.
     
