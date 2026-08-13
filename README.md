@@ -16,39 +16,50 @@ Há dois modos bem distintos de operação:
 **Inicialização/carregamento:** um circuito dedicado copia sequencialmente o conteúdo da ROM para a RAM.
 **Execução: depois do carregamento**, o controle dos barramentos é transferido para o datapath do processador e o PC passa a endereçar a RAM.
 
-| Instrução |
-| :--- |
-| `Inicialização e carregamento ROM → RAM
+### set MQTT state estado
+<table>
+  <tr>
+    <td>
+      <pre><code class="language-js">
+      Save PROFINET state object
+      </code></pre>
+        Inicialização e carregamento ROM → RAM
 
-O processador possui um circuito dedicado de inicialização responsável por transferir o programa armazenado na memória ROM para a memória RAM antes do início da execução.
+    O processador possui um circuito dedicado de inicialização responsável por transferir o programa armazenado na memória ROM para a memória RAM antes do início da execução.
+    
+    Ao acionar o botão Ligar, um contador de carregamento independente do contador de programa percorre sequencialmente os endereços da ROM. A cada ciclo, o conteúdo lido é transferido para o endereço correspondente da RAM.
+    
+    Durante essa etapa, multiplexadores selecionam:
+    
+    o contador de carregamento como fonte do barramento de endereços;
+    a ROM como fonte do barramento de dados utilizado para escrita na RAM.
+    
+    Ao atingir o final da região de memória a ser copiada, o contador de carregamento gera uma flag indicando a conclusão da inicialização. Essa flag intertrava os circuitos responsáveis pelo carregamento e altera o estado dos multiplexadores, transferindo o controle do sistema para o processador:
+    
+    o barramento de endereços passa a ser controlado pelo Program Counter (PC);
+    o caminho de dados deixa de ser alimentado pela ROM e passa a utilizar o datapath da ULA.
+    
+    A partir desse momento, o processador encontra-se pronto para entrar no estado de execução.
+    
+    Execução do programa
+    
+    O segundo botão permite iniciar a execução do programa previamente carregado na RAM.
+    
+    Com o contador de programa liberado, o PC passa a percorrer os endereços da RAM e a Unidade de Controle realiza o ciclo de busca, decodificação e execução das instruções.
+    
+    De forma simplificada
+         
+  </tr>
+</table>
 
-Ao acionar o botão Ligar, um contador de carregamento independente do contador de programa percorre sequencialmente os endereços da ROM. A cada ciclo, o conteúdo lido é transferido para o endereço correspondente da RAM.
-
-Durante essa etapa, multiplexadores selecionam:
-
-o contador de carregamento como fonte do barramento de endereços;
-a ROM como fonte do barramento de dados utilizado para escrita na RAM.
-
-Ao atingir o final da região de memória a ser copiada, o contador de carregamento gera uma flag indicando a conclusão da inicialização. Essa flag intertrava os circuitos responsáveis pelo carregamento e altera o estado dos multiplexadores, transferindo o controle do sistema para o processador:
-
-o barramento de endereços passa a ser controlado pelo Program Counter (PC);
-o caminho de dados deixa de ser alimentado pela ROM e passa a utilizar o datapath da ULA.
-
-A partir desse momento, o processador encontra-se pronto para entrar no estado de execução.
-
-Execução do programa
-
-O segundo botão permite iniciar a execução do programa previamente carregado na RAM.
-
-Com o contador de programa liberado, o PC passa a percorrer os endereços da RAM e a Unidade de Controle realiza o ciclo de busca, decodificação e execução das instruções.
-
-De forma simplificada:` |
 
 A arquitetura foi dividida em três blocos principais, destacados por cores no diagrama:
 
 - 🔴 **Unidade de Controle:** responsável pela decodificação das instruções e pelo controle dos diferentes estados necessários à execução de cada operação;
 - 🔵 **Unidade Lógica e Aritmética (ULA):** executa operações aritméticas e lógicas e atualiza as flags utilizadas pelas instruções de salto condicional;
 - 🟢 **Memória e controle de fluxo:** composto pelas memórias ROM e RAM e pelo contador de programa (*Program Counter — PC*), responsáveis pelo armazenamento e sequenciamento das instruções.
+
+A arquitetura utiliza um único registrador de propósito geral, empregado como acumulador.
 
 ## Funcionamento
 
