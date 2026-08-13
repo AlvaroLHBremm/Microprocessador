@@ -16,7 +16,7 @@ Há dois modos bem distintos de operação:
 **Inicialização/carregamento:** um circuito dedicado copia sequencialmente o conteúdo da ROM para a RAM.
 **Execução: depois do carregamento**, o controle dos barramentos é transferido para o datapath do processador e o PC passa a endereçar a RAM.
 
-### set MQTT state estado
+
 <table>
   <tr>
     <td>
