@@ -11,11 +11,12 @@ https://www.youtube.com/watch?v=KcWQU9CIYoI&t=136s
 
 ## Funcionamento
 
+<!--
 Há dois modos bem distintos de operação:
 
 **Inicialização/carregamento:** um circuito dedicado copia sequencialmente o conteúdo da ROM para a RAM. Ligando uma flag para sinalizar seu término.
 **Execução: depois do carregamento**, Quando a flag de carregamento estiver ativa, o controle dos barramentos é transferido para o datapath do processador e o PC passa a endereçar a RAM.
-
+-->
 
 <table>
   <tr>
