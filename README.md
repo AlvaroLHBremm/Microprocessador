@@ -9,7 +9,7 @@ A arquitetura foi desenvolvida a partir de componentes digitais básicos e inclu
 <!--
 ![Estrutura do processador](https://github.com/AlvaroLHBremm/Processador-programavel-de-8-bits/blob/main/Estrutura%20do%20Processador.png?raw=true)
 -->
-<p align="center"> <img src="estrutura.png" alt="diagrama" width="600px"></p>
+<p align="center"> <img src="estrutura.png" alt="diagrama" width="750px"></p>
 <p align="center"><b>Website</b></p>
 
 ## Funcionamento
