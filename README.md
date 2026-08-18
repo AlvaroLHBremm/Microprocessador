@@ -4,8 +4,7 @@ Projeto pessoal desenvolvido no simulador de eletrônica digital **Deeds** com o
 
 A arquitetura foi desenvolvida a partir de componentes digitais básicos e inclui **unidade de controle, unidade lógica e aritmética (ULA), registrador acumulador, memória ROM/RAM e contador de programa**, permitindo a execução de um conjunto próprio de instruções.
 
-🎥 **Vídeo demonstrativo e simulação:**  
-https://www.youtube.com/watch?v=KcWQU9CIYoI&t=136s
+🎥 **Vídeo demonstrativo e simulação:**  [clique aqui](https://www.youtube.com/watch?v=KcWQU9CIYoI&t=136s)
 
 ![Estrutura do processador](https://github.com/AlvaroLHBremm/Processador-programavel-de-8-bits/blob/main/Estrutura%20do%20Processador.png?raw=true)
 
@@ -27,7 +26,7 @@ Há dois modos bem distintos de operação:
 
       O processador possui um circuito dedicado de inicialização responsável por transferir o programa armazenado na memória ROM para a memória RAM antes do início da execução.
     
-      Ao acionar o botão Ligar, um contador de carregamento independente do contador de programa percorre sequencialmente os endereços da ROM e da RAM. A cada ciclo, o conteúdo lido é transferido para o endereço correspondente da RAM.
+      Ao acionar o botão Ligar, um contador de carregamento independente do contador de programa percorre sequencialmente os endereços da ROM e da RAM simultaneamente. A cada ciclo, o conteúdo lido é transferido para o endereço correspondente da RAM.
       
       Durante essa etapa, multiplexadores selecionam:
       -    O contador de carregamento como fonte do barramento de endereços;
@@ -35,7 +34,7 @@ Há dois modos bem distintos de operação:
       
       Ao atingir o final da região de memória a ser copiada, o contador de carregamento gera uma flag indicando a conclusão da inicialização. Essa flag intertrava os circuitos responsáveis pelo carregamento e altera o origem do barramento de endereço e dados da RAM através de multiplexadores, transferindo o controle do sistema para o próprio processador:
       
-      ???o barramento de endereços passa a ser controlado pelo Contador de programa (PC);
+      O barramento de endereços passa a ser controlado pelo Contador de programa (PC);
       o caminho de dados deixa de ser alimentado pela ROM e passa a utilizar o datapath da ULA.
       
       A partir desse momento, o processador encontra-se pronto para entrar no estado de execução.
@@ -57,15 +56,15 @@ Há dois modos bem distintos de operação:
 
 A arquitetura foi dividida em três blocos principais, destacados por cores no diagrama:
 
-- 🔴 **Unidade de Controle:** responsável pela decodificação das instruções e pelo controle dos diferentes estados necessários à execução de cada operação;
-- 🔵 **Unidade Lógica e Aritmética (ULA):** executa operações aritméticas e lógicas e atualiza as flags utilizadas pelas instruções de salto condicional;
-- 🟢 **Memória e controle de fluxo:** composto pelas memórias ROM e RAM e pelo contador de programa (*Program Counter — PC*), responsáveis pelo armazenamento e sequenciamento das instruções.
+- 🔴 **Unidade de Controle:** Responsável pela decodificação das instruções e pelo controle dos diferentes estados necessários à execução de cada operação;
+- 🔵 **Unidade Lógica e Aritmética (ULA):** Executa operações aritméticas e lógicas e atualiza as flags utilizadas pelas instruções de salto condicional;
+- 🟢 **Memória e controle de fluxo:** Composto pelas memórias ROM e RAM e pelo contador de programa (*Program Counter — PC*), responsáveis pelo armazenamento e sequenciamento das instruções.
 
 A arquitetura utiliza um único registrador de propósito geral, empregado como acumulador.
 
 ## Funcionamento
 
-Ao ligar o processador, o programa armazenado na **ROM** é transferido para a **RAM**.
+Ao ligar o processador pelo botão "ligar", o programa armazenado na **ROM** é transferido para a **RAM**.
 
 Após o acionamento do comando de execução, o processador inicia o ciclo de processamento das instruções armazenadas na RAM:
 
