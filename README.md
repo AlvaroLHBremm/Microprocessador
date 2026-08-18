@@ -24,15 +24,19 @@ Há dois modos bem distintos de operação:
         
       Inicialização e carregamento ROM → RAM
 
-      O processador possui um circuito dedicado de inicialização responsável por transferir o programa armazenado na memória ROM para a memória RAM antes do início da execução.
+      O processador possui um circuito dedicado de inicialização responsável por transferir o programa armazenado na memória ROM para a memória RAM
+      antes do início da execução.
     
-      Ao acionar o botão Ligar, um contador de carregamento independente do contador de programa percorre sequencialmente os endereços da ROM e da RAM simultaneamente. A cada ciclo, o conteúdo lido é transferido para o endereço correspondente da RAM.
+      Ao acionar o botão Ligar, um contador de carregamento independente do contador de programa percorre sequencialmente os endereços da ROM e da 
+      RAM simultaneamente. A cada ciclo, o conteúdo lido é transferido para o endereço correspondente da RAM.
       
       Durante essa etapa, multiplexadores selecionam:
       -    O contador de carregamento como fonte do barramento de endereços;
       -    A ROM como fonte do barramento de dados utilizado para escrita na RAM.
       
-      Ao atingir o final da região de memória a ser copiada, o contador de carregamento gera uma flag indicando a conclusão da inicialização. Essa flag intertrava os circuitos responsáveis pelo carregamento e altera o origem do barramento de endereço e dados da RAM através de multiplexadores, transferindo o controle do sistema para o próprio processador:
+      Ao atingir o final da região de memória a ser copiada, o contador de carregamento gera uma flag indicando a conclusão da inicialização. Essa flag 
+      intertrava os circuitos responsáveis pelo carregamento e altera o origem do barramento de endereço e dados da RAM através de multiplexadores, 
+      transferindo o controle do sistema para o próprio processador:
       
       O barramento de endereços passa a ser controlado pelo Contador de programa (PC);
       o caminho de dados deixa de ser alimentado pela ROM e passa a utilizar o datapath da ULA.
@@ -43,7 +47,8 @@ Há dois modos bem distintos de operação:
       
       O segundo botão permite iniciar a execução do programa previamente carregado na RAM.
       
-      Com o contador de programa liberado, o PC passa a percorrer os endereços da RAM e a Unidade de Controle realiza o ciclo de busca, decodificação e execução das instruções.
+      Com o contador de programa liberado, o PC passa a percorrer os endereços da RAM e a Unidade de Controle realiza o ciclo de busca, decodificação 
+      e execução das instruções.
       
       De forma simplificada
       
