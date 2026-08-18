@@ -4,13 +4,13 @@ Projeto pessoal desenvolvido no simulador de eletrônica digital **Deeds** com o
 
 A arquitetura foi desenvolvida a partir de componentes digitais básicos e inclui **unidade de controle, unidade lógica e aritmética (ULA), registrador acumulador, memória ROM/RAM e contador de programa**, permitindo a execução de um conjunto próprio de instruções.
 
-🎥 **Vídeo demonstrativo e simulação:**  [clique aqui](https://www.youtube.com/watch?v=KcWQU9CIYoI&t=136s)
+🎥 **Vídeo demonstrativo e simulação:**  [clique aqui](https://www.youtube.com/watch?v=KcWQU9CIYoI&t=136s) <br>
 
 <!--
 ![Estrutura do processador](https://github.com/AlvaroLHBremm/Processador-programavel-de-8-bits/blob/main/Estrutura%20do%20Processador.png?raw=true)
 -->
 <p align="center"> <img src="estrutura.png" alt="diagrama" width="750px"></p>
-<p align="center"><b>Website</b></p>
+<p align="center"><b>Estrutura do website</b></p><br>
 
 ## Funcionamento
 
