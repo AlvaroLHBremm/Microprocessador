@@ -10,16 +10,9 @@ A arquitetura foi desenvolvida a partir de componentes digitais básicos e inclu
 ![Estrutura do processador](https://github.com/AlvaroLHBremm/Processador-programavel-de-8-bits/blob/main/Estrutura%20do%20Processador.png?raw=true)
 -->
 <p align="center"> <img src="estrutura.png" alt="diagrama" width="750px"></p>
-<p align="center"><b>Estrutura do website</b></p><br>
+<p align="center"><b>Estrutura do processador</b></p><br>
 
 ## Funcionamento
-
-<!--
-Há dois modos bem distintos de operação:
-
-**Inicialização/carregamento:** um circuito dedicado copia sequencialmente o conteúdo da ROM para a RAM. Ligando uma flag para sinalizar seu término.
-**Execução: depois do carregamento**, Quando a flag de carregamento estiver ativa, o controle dos barramentos é transferido para o datapath do processador e o PC passa a endereçar a RAM.
--->
 
 <table>
   <tr>
@@ -28,11 +21,8 @@ Há dois modos bem distintos de operação:
         
       Inicialização e carregamento ROM → RAM
 
-      O processador possui um circuito dedicado de inicialização responsável por transferir o programa armazenado na memória 
-      ROM para a memória RAM antes do início da execução.
     
-      Ao acionar o botão Ligar, um contador de carregamento independente do contador de programa percorre sequencialmente 
-      os endereços da ROM e da RAM simultaneamente. A cada ciclo, o conteúdo lido é transferido para o endereço correspondente da RAM.
+
       
       Durante essa etapa, multiplexadores selecionam:
       -    O contador de carregamento como fonte do barramento de endereços;
@@ -73,7 +63,10 @@ A arquitetura utiliza um único registrador de propósito geral, empregado como 
 
 ## Funcionamento
 
-Ao ligar o processador pelo botão "ligar", o programa armazenado na **ROM** é transferido para a **RAM**.
+Ao ligar o processador pelo botão "ligar", o programa armazenado na **ROM** é transferido para a **RAM** através de um circuito dedicado de inicialização.
+
+      Ao acionar o botão Ligar, um contador de carregamento independente do contador de programa percorre sequencialmente 
+      os endereços da ROM e da RAM simultaneamente. A cada ciclo, o conteúdo lido é transferido para o endereço correspondente da RAM.
 
 Após o acionamento do comando de execução, o processador inicia o ciclo de processamento das instruções armazenadas na RAM:
 
