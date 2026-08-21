@@ -13,7 +13,7 @@ A arquitetura foi desenvolvida a partir de componentes digitais básicos e inclu
 <p align="center"><b>Estrutura do processador</b></p><br>
 
 ## Funcionamento
-
+<!-- 
 <table>
   <tr>
     <td>
@@ -50,6 +50,8 @@ A arquitetura foi desenvolvida a partir de componentes digitais básicos e inclu
   </tr>
 </table>
 
+-->
+
 ## Arquitetura
 
 
@@ -65,8 +67,8 @@ A arquitetura utiliza um único registrador de propósito geral, empregado como 
 
 Ao ligar o processador pelo botão "ligar", o programa armazenado na **ROM** é transferido para a **RAM** através de um circuito dedicado de inicialização.
 
-      Ao acionar o botão Ligar, um contador de carregamento independente do contador de programa percorre sequencialmente 
-      os endereços da ROM e da RAM simultaneamente. A cada ciclo, o conteúdo lido é transferido para o endereço correspondente da RAM.
+Ao acionar o botão Ligar, um contador de carregamento independente do contador de programa percorre sequencialmente 
+os endereços da ROM e da RAM simultaneamente. A cada ciclo, o conteúdo lido é transferido para o endereço correspondente da RAM.
 
 Após o acionamento do comando de execução, o processador inicia o ciclo de processamento das instruções armazenadas na RAM:
 
@@ -112,8 +114,3 @@ O projeto foi desenvolvido como exercício de aprofundamento em:
 - fluxo de dados entre os diferentes blocos de um processador;
 - execução de instruções em código de máquina.
 
-## Ferramentas
-
-- **Deeds Digital Circuit Simulator**
-- Lógica digital
-- Assembly e código de máquina para a arquitetura desenvolvida
