@@ -12,7 +12,6 @@ A arquitetura foi desenvolvida a partir de componentes digitais básicos e inclu
 <p align="center"> <img src="estrutura.png" alt="diagrama" width="750px"></p>
 <p align="center"><b>Estrutura do processador</b></p><br>
 
-## Funcionamento
 <!-- 
 <table>
   <tr>
