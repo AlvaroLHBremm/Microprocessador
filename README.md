@@ -103,12 +103,12 @@ Os programas podem ser representados por mnemônicos em **Assembly**, que poster
 
 O projeto foi desenvolvido como exercício de aprofundamento em:
 
-- arquitetura de computadores;
-- eletrônica digital;
-- máquinas de estados;
-- projeto de unidade de controle;
-- funcionamento de memória e registradores;
-- desenvolvimento de uma ISA própria;
-- fluxo de dados entre os diferentes blocos de um processador;
-- execução de instruções em código de máquina.
+- Arquitetura de computadores;
+- Eletrônica digital;
+- Máquinas de estados;
+- Projeto de unidade de controle;
+- Funcionamento de memória e registradores;
+- Desenvolvimento de uma ISA própria;
+- Fluxo de dados entre os diferentes blocos de um processador;
+- Execução de instruções em assembly/código de máquina.
 
