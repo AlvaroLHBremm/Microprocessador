@@ -57,10 +57,9 @@ A arquitetura foi desenvolvida a partir de componentes digitais básicos e inclu
 A arquitetura foi dividida em três blocos principais, destacados por cores no diagrama:
 
 - 🔴 **Unidade de Controle:** Responsável pela decodificação das instruções e pelo controle dos diferentes estados necessários à execução de cada operação;
-- 🔵 **Unidade Lógica e Aritmética (ULA):** Executa operações aritméticas e lógicas e atualiza as flags utilizadas pelas instruções de salto condicional;
+- 🔵 **Unidade Lógica e Aritmética (ULA):** Executa operações aritméticas e lógicas através de um registrador acumulador e atualiza as flags utilizadas pelas instruções de salto condicional;
 - 🟢 **Memória e controle de fluxo:** Composto pelas memórias ROM e RAM e pelo contador de programa (*Program Counter — PC*), responsáveis pelo armazenamento e sequenciamento das instruções.
 
-A arquitetura utiliza um único registrador de propósito geral, empregado como acumulador.
 
 ## Funcionamento
 
