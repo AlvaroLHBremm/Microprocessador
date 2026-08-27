@@ -85,19 +85,18 @@ O processador utiliza um conjunto próprio de instruções (*Instruction Set Arc
 
 Os programas podem ser representados por mnemônicos em **Assembly**, que posteriormente correspondem aos respectivos opcodes utilizados pelo processador em código de máquina.
 
-| Instrução | Código de máquina | Descrição |
+| Instrução | Código de máquina (hex) | Descrição |
 | :--- | :---: | :--- |
-| `LDA` | `[0x10][0xXX]` | Carrega no acumulador o conteúdo do endereço de memória `X`. |
-| `STA` | `[0x20][0xXX]` | Armazena o conteúdo do acumulador no endereço de memória `X`. |
-| `ADD` | `[0x30][0xXX]` | Soma ao acumulador o conteúdo do endereço de memória `X`. |
-| `NOT` | `[0x40]` | Realiza a inversão bit a bit do conteúdo do acumulador. |
-| `AND` | `[0x50][0xXX]` | Realiza uma operação AND bit a bit entre o acumulador e o conteúdo do endereço `X`. |
-| `OR` | `[0x60][0xXX]` | Realiza uma operação OR bit a bit entre o acumulador e o conteúdo do endereço `X`. |
-| `JMP` | `[0x70][0xXX]` | Altera incondicionalmente o fluxo de execução para o endereço `X`. |
-| `JZ` | `[0x71][0xXX]` | Salta para o endereço `X` quando a flag de zero está ativa. |
-| `JN` | `[0x72][0xXX]` | Salta para o endereço `X` quando a flag de negativo está ativa. |
+| `LDA` | `0x10` | Carrega no acumulador o conteúdo do endereço de memória `X`. |
+| `STA` | `0x20` | Armazena o conteúdo do acumulador no endereço de memória `X`. |
+| `ADD` | `0x30` | Soma ao acumulador o conteúdo do endereço de memória `X`. |
+| `NOT` | `0x40` | Realiza a inversão bit a bit do conteúdo do acumulador. |
+| `AND` | `0x50` | Realiza uma operação AND bit a bit entre o acumulador e o conteúdo do endereço `X`. |
+| `OR` | `0x60` | Realiza uma operação OR bit a bit entre o acumulador e o conteúdo do endereço `X`. |
+| `JMP` | `0x70` | Altera incondicionalmente o fluxo de execução para o endereço `X`. |
+| `JZ` | `0x71` | Salta para o endereço `X` quando a flag de zero está ativa. |
+| `JN` | `0x72` | Salta para o endereço `X` quando a flag de negativo está ativa. |
 
-`0xXX` representa o endereço de memória utilizado como operando pela instrução.
 
 ## Objetivos do projeto
 
